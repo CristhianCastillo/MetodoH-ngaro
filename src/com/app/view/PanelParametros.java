@@ -96,6 +96,11 @@ public class PanelParametros extends JPanel implements ActionListener
     private final JLabel lblSeleccionarArchivo;
     
     /**
+     * Etiqueta tiempo ejecución.
+     */
+    private JLabel lblTiempoEjecucion;
+    
+    /**
      * Lista desplegable del tipo de solución.
      */
     private final JComboBox<String> cbmTipoSolucion;
@@ -104,6 +109,11 @@ public class PanelParametros extends JPanel implements ActionListener
      * Campo de texto ruta del archivo.
      */
     private final JTextField txtRutaArchivo;
+    
+    /**
+     * Campo de texto que muestra el tiempo de ejecución del algoritmo.
+     */
+    private JTextField txtTiempoEjecucion;
    
     /**
      * Boton seleccionar archivo.
@@ -138,6 +148,10 @@ public class PanelParametros extends JPanel implements ActionListener
         //Creacion componentes.
         lblTipoSolucion = new JLabel("Tipo: ");
         lblSeleccionarArchivo = new JLabel("Seleccionar Archivo: ");
+        lblTiempoEjecucion = new JLabel("Tiempo ejecución: ");
+        
+        txtTiempoEjecucion = new JTextField(10);
+        txtTiempoEjecucion.setEditable(false);
         
         DefaultComboBoxModel modeloTipo = new DefaultComboBoxModel(TIPO_SOLUCION);
         cbmTipoSolucion = new JComboBox<>(modeloTipo);
@@ -160,14 +174,10 @@ public class PanelParametros extends JPanel implements ActionListener
         btnLimpiarSalida = new JButton("Limpiar Salida");
         btnLimpiarSalida.setActionCommand(LIMPIAR_SALIDA);
         btnLimpiarSalida.addActionListener((ActionListener)this);
-        
-        JPanel pnlSeleccionarArchivo = new JPanel();
-        pnlSeleccionarArchivo.setLayout(new GridLayout(1,2));
-        pnlSeleccionarArchivo.add(txtRutaArchivo);
-        pnlSeleccionarArchivo.add(btnSeleccionarArchivo);
-        
+                
         JPanel pnlBotones = new JPanel();
         pnlBotones.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        pnlBotones.add(btnSeleccionarArchivo);
         pnlBotones.add(btnEjecutarAlgoritmo);
         pnlBotones.add(btnLimpiarSalida);
         
@@ -179,11 +189,13 @@ public class PanelParametros extends JPanel implements ActionListener
                 .addGroup(grupo.createParallelGroup()
                         .addComponent(lblTipoSolucion)
                         .addComponent(lblSeleccionarArchivo)
+                        .addComponent(lblTiempoEjecucion)
                 )
                 
                 .addGroup(grupo.createParallelGroup()
                         .addComponent(cbmTipoSolucion)
-                        .addComponent(pnlSeleccionarArchivo)
+                        .addComponent(txtRutaArchivo)
+                        .addComponent(txtTiempoEjecucion)
                         .addComponent(pnlBotones, GroupLayout.Alignment.TRAILING)
                 )
         );
@@ -197,9 +209,13 @@ public class PanelParametros extends JPanel implements ActionListener
                 
                 .addGroup(grupo.createParallelGroup()
                         .addComponent(lblSeleccionarArchivo)
-                        .addComponent(pnlSeleccionarArchivo)
+                        .addComponent(txtRutaArchivo)
                 )
                 
+                .addGroup(grupo.createParallelGroup()
+                        .addComponent(lblTiempoEjecucion)
+                        .addComponent(txtTiempoEjecucion)
+                )
                 .addGroup(grupo.createParallelGroup()
                         .addComponent(pnlBotones)
                 )
@@ -245,9 +261,14 @@ public class PanelParametros extends JPanel implements ActionListener
             {
                 try
                 {
+                    long tiempo;
+                    long t1 = System.currentTimeMillis();
                     String tipoProblema = cbmTipoSolucion.getSelectedItem().toString();
                     ctrl.validarArchivo(txtRutaArchivo.getText(), nombreArchivo,tipoProblema);
                     ctrl.ejecutarAlgoritmo();
+                    long t2 = System.currentTimeMillis();
+                    tiempo = t2 - t1;
+                    txtTiempoEjecucion.setText((double)tiempo + "ms");
                 }
                 catch(Exception ex)
                 {
