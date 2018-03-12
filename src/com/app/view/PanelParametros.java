@@ -13,7 +13,6 @@ package com.app.view;
 import com.app.controller.Controlador;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -98,7 +97,7 @@ public class PanelParametros extends JPanel implements ActionListener
     /**
      * Etiqueta tiempo ejecución.
      */
-    private JLabel lblTiempoEjecucion;
+    private final JLabel lblTiempoEjecucion;
     
     /**
      * Lista desplegable del tipo de solución.
@@ -113,7 +112,7 @@ public class PanelParametros extends JPanel implements ActionListener
     /**
      * Campo de texto que muestra el tiempo de ejecución del algoritmo.
      */
-    private JTextField txtTiempoEjecucion;
+    private final JTextField txtTiempoEjecucion;
    
     /**
      * Boton seleccionar archivo.
