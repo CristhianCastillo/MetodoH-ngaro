@@ -132,7 +132,7 @@ public class PanelSalida extends JPanel implements ActionListener
                     try (FileWriter save = new FileWriter( guardar + ".txt")) {
                         save.write(txtBufferSalida.getText());
                     }
-                    JOptionPane.showMessageDialog(null,"El archivo se a guardado Exitosamente","Exportar Archivo",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"El archivo se a guardado exitosamente","Exportar Archivo",JOptionPane.INFORMATION_MESSAGE);
                 }
                 
             }

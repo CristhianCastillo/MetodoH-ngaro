@@ -14,6 +14,7 @@ import com.app.model.Linea;
 import com.app.view.PanelSalida;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -235,10 +236,21 @@ public class Controlador {
             if (tipo.equalsIgnoreCase("Maximizar")) {
                 ajustarCasoMaximizar();
             }
-
             tamanioProblema = numeroFilas;
+            
         } catch (Exception ex) {
             throw new Exception(ex.getMessage());
+        }
+        finally
+        {
+            try
+            {
+                archivoLectura.close();
+            }
+            catch(IOException ex)
+            {
+                throw new Exception(ex.getMessage());
+            }
         }
     }
 
