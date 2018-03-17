@@ -263,6 +263,8 @@ public class PanelParametros extends JPanel implements ActionListener
                     long tiempo;
                     long t1 = System.currentTimeMillis();
                     String tipoProblema = cbmTipoSolucion.getSelectedItem().toString();
+                    if(txtRutaArchivo.getText().trim().equalsIgnoreCase(""))
+                        throw new Exception("Seleccione un archivo.");
                     ctrl.validarArchivo(txtRutaArchivo.getText(), nombreArchivo,tipoProblema);
                     ctrl.ejecutarAlgoritmo();
                     long t2 = System.currentTimeMillis();
@@ -282,6 +284,7 @@ public class PanelParametros extends JPanel implements ActionListener
                     {
                         ctrl.inicializar();
                         txtRutaArchivo.setText("");
+                        txtTiempoEjecucion.setText("");
                     }
                     catch(Exception ex)
                     {
