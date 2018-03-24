@@ -155,7 +155,7 @@ public class Controlador {
                 matrizRespaldo11.actualizarValor(nuevo);
             }
         }
-        pnlSalida.escribirSalida(". Converción Problema de Minimización (Matriz Previa)");
+        pnlSalida.escribirSalida(". Conversión Problema de Minimización (Matriz Previa)");
         this.mostrarMatrizRespaldo();
         pnlSalida.escribirSalida(DELIMITADOR_PASO_PASO);
     }
@@ -182,7 +182,7 @@ public class Controlador {
                 throw new Exception("No se ha definido la ruta del archivo.");
             }
             if (ruta.trim().equalsIgnoreCase("")) {
-                throw new Exception("La ruta del archivo no puede estar vacia.");
+                throw new Exception("La ruta del archivo no puede estar vacía.");
             }
 
             archivoLectura = new FileReader(ruta);
@@ -195,13 +195,13 @@ public class Controlador {
                 if (numeroFilas == 0) {
                     numeroColumnas = numeroSeparados.length;
                 } else if (numeroColumnas != numeroSeparados.length) {
-                    throw new Exception("El numero de columnas no es el mismo para cada fila.");
+                    throw new Exception("El número de columnas no es el mismo para cada fila.");
                 }
                 numeroFilas++;
             }
 
             if (numeroFilas != numeroColumnas) {
-                throw new Exception("El numero de filas y de columnas no es el mismo.");
+                throw new Exception("El número de filas y de columnas no es el mismo.");
             } else {
                 matrizRespaldo = new Item[numeroFilas][numeroColumnas];
                 matrizReal = new int[numeroFilas][numeroColumnas];
@@ -309,7 +309,7 @@ public class Controlador {
                 pnlSalida.escribirSalida("x" + i + " = " + matrizReal[coTemp[0]][coTemp[1]]);
             }
             pnlSalida.escribirSalida(DELIMITADOR_PASO_PASO);
-            pnlSalida.escribirSalida("7. Solucion Óptima");
+            pnlSalida.escribirSalida("7. Solución Óptima");
             for (int[] matrizSolucionOptima1 : matrizSolucionOptima) {
                 String salidaFila = "";
                 for (int j = 0; j < matrizSolucionOptima1.length; j++) {

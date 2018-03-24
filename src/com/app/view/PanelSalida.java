@@ -65,7 +65,7 @@ public class PanelSalida extends JPanel implements ActionListener
      */
     public PanelSalida()
     {
-        this.setBorder(new TitledBorder("Salida Algoritmo"));
+        this.setBorder(new TitledBorder("Salida algoritmo"));
         this.setLayout(new BorderLayout());
         
         txtBufferSalida = new JTextArea(10,50);
@@ -75,7 +75,7 @@ public class PanelSalida extends JPanel implements ActionListener
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         
-        btnExportar = new JButton("Exportar Archivo");
+        btnExportar = new JButton("Exportar archivo");
         btnExportar.setActionCommand(EXPORTAR_ARCHIVO);
         btnExportar.addActionListener((ActionListener)this);
         
@@ -121,7 +121,7 @@ public class PanelSalida extends JPanel implements ActionListener
             try
             {
                 if(txtBufferSalida.getText().trim().equalsIgnoreCase(""))
-                    throw new Exception("El buffer de salida esta vacio.");
+                    throw new Exception("El buffer de salida esta vacío.");
                 JFileChooser fc = new JFileChooser("./data");
                 fc.setDialogTitle("Guardar archivo problema de asignación");
                 fc.setMultiSelectionEnabled(false);
@@ -132,13 +132,13 @@ public class PanelSalida extends JPanel implements ActionListener
                     try (FileWriter save = new FileWriter( guardar + ".txt")) {
                         save.write(txtBufferSalida.getText());
                     }
-                    JOptionPane.showMessageDialog(null,"El archivo se a guardado exitosamente","Exportar Archivo",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"El archivo se ha guardado exitosamente.","Exportar archivo",JOptionPane.INFORMATION_MESSAGE);
                 }
                 
             }
             catch(Exception ex)
             {
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Exportar Archivo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Exportar archivo", JOptionPane.ERROR_MESSAGE);
             }
         }
     }

@@ -39,7 +39,7 @@ public class PanelParametros extends JPanel implements ActionListener
     /**
      * Constante que envia el boton "Seleccionar Archivo".
      */
-    public static final String SELECCIONAR_ARCHIVO = "Seleccionar Archivo.";
+    public static final String SELECCIONAR_ARCHIVO = "Seleccionar Archivo";
     
     /**
      * Constante para ejecutar el algoritmo.
@@ -140,14 +140,14 @@ public class PanelParametros extends JPanel implements ActionListener
     public PanelParametros(Controlador ctrl)
     {
         this.ctrl = ctrl;
-        this.setBorder(new TitledBorder("Parametros de entrada"));
+        this.setBorder(new TitledBorder("Parámetros de entrada"));
         GroupLayout grupo = new GroupLayout(this);
         this.setLayout(grupo);
         
         //Creacion componentes.
         lblTipoSolucion = new JLabel("Tipo: ");
         lblSeleccionarArchivo = new JLabel("Seleccionar Archivo: ");
-        lblTiempoEjecucion = new JLabel("Tiempo ejecución: ");
+        lblTiempoEjecucion = new JLabel("Tiempo de ejecución: ");
         
         txtTiempoEjecucion = new JTextField(10);
         txtTiempoEjecucion.setEditable(false);
@@ -166,11 +166,11 @@ public class PanelParametros extends JPanel implements ActionListener
         btnSeleccionarArchivo.setActionCommand(SELECCIONAR_ARCHIVO);
         btnSeleccionarArchivo.addActionListener((ActionListener)this);
         
-        btnEjecutarAlgoritmo = new JButton("Ejecutar Algoritmo");
+        btnEjecutarAlgoritmo = new JButton("Ejecutar algoritmo");
         btnEjecutarAlgoritmo.setActionCommand(EJECUTAR_ALGORITMO);
         btnEjecutarAlgoritmo.addActionListener((ActionListener)this);
         
-        btnLimpiarSalida = new JButton("Limpiar Salida");
+        btnLimpiarSalida = new JButton("Limpiar salida");
         btnLimpiarSalida.setActionCommand(LIMPIAR_SALIDA);
         btnLimpiarSalida.addActionListener((ActionListener)this);
                 
@@ -250,7 +250,7 @@ public class PanelParametros extends JPanel implements ActionListener
             }
             catch(Exception ex)
             {
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Selecionar Archivo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Seleccionar Archivo", JOptionPane.ERROR_MESSAGE);
             }
             
         }
@@ -273,7 +273,7 @@ public class PanelParametros extends JPanel implements ActionListener
                 }
                 catch(Exception ex)
                 {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ejecutar Algoritmo", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ejecutar algoritmo", JOptionPane.ERROR_MESSAGE);
                 }
             }
             else
@@ -288,7 +288,7 @@ public class PanelParametros extends JPanel implements ActionListener
                     }
                     catch(Exception ex)
                     {
-                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Limpiar Salida", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Limpiar salida", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }

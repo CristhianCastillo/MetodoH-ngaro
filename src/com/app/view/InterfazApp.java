@@ -58,7 +58,7 @@ public class InterfazApp extends JFrame
     public InterfazApp()
     {
         ctrl = new Controlador();
-        this.setTitle("Metodo Hungaro");
+        this.setTitle("Método Húngaro");
         this.setLayout(new BorderLayout());
         
         pnlParametros = new PanelParametros(ctrl);
