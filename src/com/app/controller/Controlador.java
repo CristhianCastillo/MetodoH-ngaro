@@ -31,17 +31,17 @@ public class Controlador {
     // -------------------------------------------------------------------------
 
     /**
-     * Constante para Delimitar la cadena entrante del archivo.
+     * Constante para Delimitar la cadena de entrada del archivo.
      */
     public static final String DELIMITADORES = "[ .,;?!¡¿\'\"\\[\\]]+";
     
     /**
-     * Constante para Delimitar un ejercicio de otro.
+     * Constante para delimitar un ejercicio de otro.
      */
     public static final String CABECERA_SALIDA = "*****************************************************************************************************************";
     
     /**
-     * Consta para delimitar un paso de otro.
+     * Constante para delimitar un paso de otro.
      */
     public static final String DELIMITADOR_PASO_PASO = "-------------------------------------------------------------------";
     // -------------------------------------------------------------------------
@@ -58,12 +58,12 @@ public class Controlador {
     private BufferedReader bufferLectura;
 
     /**
-     * Caraeteres de una linea leida.
+     * Caracteres de una linea leida.
      */
     private String lineaLectura;
 
     /**
-     * Matriz de enteros del problema de asignación.
+     * Matriz de enteros para problema de asignación.
      */
     private int[][] matrizReal;
 
@@ -135,7 +135,7 @@ public class Controlador {
      * Realiza una modificación en la matriz (solo para el caso Maximizar). Dado
      * que se busca maximizar las ganancia en el problema, se determina el
      * numero mas grande y se resta a este, el que se encuentra en cada posición
-     * de la amtriz, el resultado es asignado en la misma posición.
+     * de la matriz, el resultado es asignado en la misma posición.
      */
     public void ajustarCasoMaximizar() {
         int mayor = 0;
@@ -162,10 +162,11 @@ public class Controlador {
 
     /**
      * Valida el estado del archivo entregado, este debe contar con los
-     * requisitos minimos, para ejecutar el algoritmo. Las restricciones que se
-     * validan son: 1. El numero de filas debe ser el mismo que de columnas. 2.
-     * La matriz debe estar compuesta por numeros enteros positivos. 3. Todas
-     * las filas tiene el mismo numero de elementos.
+     * requisitos minimos para ejecutar el algoritmo. Las restricciones que se
+     * validan son: 
+     * 1. El numero de filas debe ser el mismo que de columnas. 
+     * 2. La matriz debe estar compuesta por numeros enteros positivos. 
+     * 3. Todas las filas tienen el mismo numero de elementos.
      *
      * Posterior a estas validaciones, se ingresa la matriz suministrada al
      * programa. Muestra por medio del buffer de salida, la matriz entregada.
@@ -259,11 +260,11 @@ public class Controlador {
      * 1. Determina el numero menor en cada fila y lo resta en la misma. 
      * 2. Determina el numero menor en cada columna y lo resta en la misma.
      * 3. Cubrir todos los ceros en la matriz, con el menor numero de lineas
-     * posibles. En caso que el numero de lineas, sea el mismo que el tamaño del
+     * posibles. En caso que el numero de lineas sea el mismo que el tamaño del
      * problema, la mtriz estara lista para realizar la asignación de los valores.
      * 4. Si el numero de lineas es menor que el tamaño del problema, se realiza
      * ajuste en la matriz.
-     * 5. Las coordenadas de os valores asignados, son identificadas.
+     * 5. Las coordenadas de los valores asignados, son identificadas.
      * 6. Se obtiene la solución optima y el valor óptimo.
      * @throws Exception
      */
@@ -325,9 +326,9 @@ public class Controlador {
         }
 
     }
-
+    
     /**
-     * Determina el numero menor por cada fila, y lo resta en cada una de las
+     * Determina el numero menor por cada fila y lo resta en cada una de las
      * posiciones de la misma.
      */
     public void determinarMenorPorFila() {
@@ -350,7 +351,7 @@ public class Controlador {
     }
     
     /**
-     * Determina el numero menor por cada columna y lo resta en cada una de las
+     * Determina el número menor por cada columna y lo resta en cada una de las
      * posiciones de la misma.
      */
     public void determinarMenorPorColumna() {
@@ -389,7 +390,7 @@ public class Controlador {
 
     /**
      * Retorna el numero de lineas minimo necesario para cubrir todos los ceros.
-     * @return Numero de lineas nimimas. 
+     * @return Numero de lineas minimas. 
      */
     public int obtenerLineasMatriz() {
         int contadorLineas = 0;

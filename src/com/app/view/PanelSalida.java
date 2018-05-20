@@ -134,7 +134,6 @@ public class PanelSalida extends JPanel implements ActionListener
                     }
                     JOptionPane.showMessageDialog(null,"El archivo se ha guardado exitosamente.","Exportar archivo",JOptionPane.INFORMATION_MESSAGE);
                 }
-                
             }
             catch(Exception ex)
             {

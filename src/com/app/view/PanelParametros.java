@@ -293,6 +293,5 @@ public class PanelParametros extends JPanel implements ActionListener
                 }
             }
         }
-        
     }
 }

@@ -10,7 +10,7 @@
 package com.app.model;
 
 /**
- * Clase que representa una linea para validar si es valido realizar la
+ * Clase que representa una linea para validar si es posible realizar la
  * asignacion.
  *
  * @author Cristhian Eduardo Castillo Erazo.
@@ -21,12 +21,12 @@ public class Linea {
     // -------------------------------------------------------------------------
 
     /**
-     * Constante que indica el tipo de linea FILA.
+     * Constante que indica el sentido de la linea: FILA.
      */
     public static final int FILA = 0;
 
     /**
-     * Constante que indica el tipo de linea COLUMNA.
+     * Constante que indica el sentido de la linea: COLUMNA.
      */
     public static final int COLUMNA = 1;
 
@@ -90,7 +90,7 @@ public class Linea {
     }
 
     /**
-     * Obtiene el numero de fila o columna deacuerdo con el tipo de linea.
+     * Obtiene el numero de fila o columna de acuerdo con el tipo de linea.
      *
      * @return retorna el numero de linea (Fila o columna).
      */
